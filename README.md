@@ -1,11 +1,11 @@
 # Budget Tracker
 
-This project is a simple budget tracking webpage built as part of the Week 2 assignment. It includes a form for adding expenses, a structured expense table, multimedia content, and CSS styling that demonstrates advanced selectors.
+This project is a simple budget tracking webpage built as part of the Week 3 visual design challenge. It includes a form for adding expenses, a structured expense table, multimedia content, and a cohesive CSS visual identity.
 
 ## Files in this project
 
 - `index.html` – Contains the page structure and all required HTML elements.
-- `style.css` – Adds the visual styling, table formatting, form layout, and advanced CSS selectors.
+- `style.css` – Adds the visual styling, typography, table formatting, form layout, responsive behavior, and advanced CSS selectors.
 - `README.md` – Explains what the project contains and how each section works.
 
 ## What is included
@@ -28,6 +28,13 @@ This project is a simple budget tracking webpage built as part of the Week 2 ass
 - A `details` and `summary` section was added to provide a collapsible explanation of how the tracker works.
 - Table rows change color on hover.
 - The Add Expense button shows a pointer cursor on hover.
+
+### Visual identity
+- A restrained ink, sage, coral, and paper palette is used consistently across the page.
+- Space Grotesk is used for headings and DM Sans is used for body text and controls.
+- The heading, Add Expense form, and Expense Table are presented as distinct cards with padding, borders, rounded corners, and shadows.
+- The table includes a styled header, cell spacing, borders, alternating row colors, and a hover state.
+- The form controls and button share consistent sizing, rounded corners, focus styling, and spacing.
 
 ### Advanced CSS selectors
 - Descendant selector: `.expenses-section td`

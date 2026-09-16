@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+    --ink: #17252f;
+    --muted: #60717a;
+    --paper: #fbfaf7;
+    --canvas: #eef3f0;
+    --line: #d8e2dd;
+    --sage: #dcebe3;
+    --coral: #e66d58;
+    --coral-dark: #bd4d3f;
+    --white: #ffffff;
+    --shadow: 0 18px 45px rgba(23, 37, 47, 0.08);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,11 +20,12 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #dff6f0, #f7f9fc);
-    padding: 20px;
+    min-height: 100vh;
+    padding: 42px 20px;
+    background: linear-gradient(135deg, #e6f0eb 0%, var(--canvas) 48%, #f7eee6 100%);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
     line-height: 1.6;
-    color: #2c3e50;
 }
 
 .page-header,
@@ -17,57 +33,73 @@ body {
 .expenses-section,
 .tips-section,
 .video-section {
-    max-width: 900px;
-    margin: 0 auto 30px;
-    border-radius: 10px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    max-width: 920px;
+    margin: 0 auto 28px;
+    border: 1px solid rgba(216, 226, 221, 0.9);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
 }
 
 .page-header {
+    padding: 34px 36px;
+    background: var(--ink);
+    color: var(--white);
     text-align: center;
-    padding: 20px;
 }
 
 .heading-group {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 18px;
     margin-bottom: 10px;
 }
 
+.heading-group img {
+    width: 58px;
+    height: 58px;
+    border: 3px solid rgba(255, 255, 255, 0.24);
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+#main-heading,
+h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+}
+
 #main-heading {
-    color: #1f3b4d;
-    font-size: 2.5rem;
-    text-align: center;
+    color: var(--white);
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.05;
 }
 
 #description {
-    color: #4b6474;
-    font-size: 1.1rem;
-    text-align: center;
+    color: #b9c9c5;
+    font-size: 1.05rem;
 }
 
 .add-expense-section,
 .tips-section,
 .video-section {
-    background-color: #ecf0f1;
-    padding: 25px;
+    padding: 30px;
+    background: var(--paper);
 }
 
 .add-expense-section h2,
 .expenses-section h2,
 .tips-section h2,
 .video-section h2 {
-    color: #34495e;
-    margin-bottom: 18px;
-    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--ink);
+    font-size: 1.45rem;
 }
 
 .add-expense-section > form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
 }
 
 .form-group {
@@ -76,94 +108,148 @@ body {
 }
 
 .form-group label {
-    color: #2c3e50;
-    font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
+    color: var(--muted);
+    font-size: 0.86rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
 
 .form-group input,
 .form-group select {
-    padding: 10px;
-    border: 1px solid #bdc3c7;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-family: inherit;
-}
-
-input:not([type="button"]) {
-    background-color: #ffffff;
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--white);
+    color: var(--ink);
+    font: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
-    border-color: #3498db;
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+    border-color: var(--coral);
+    box-shadow: 0 0 0 4px rgba(230, 109, 88, 0.15);
 }
 
 #add-btn {
-    background-color: #3498db;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-weight: 600;
+    grid-column: 1 / -1;
+    padding: 13px 20px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--coral);
+    color: var(--white);
+    font: inherit;
+    font-weight: 700;
     cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 #add-btn:hover {
-    background-color: #2980b9;
+    background: var(--coral-dark);
+    transform: translateY(-1px);
 }
 
 .expenses-section {
-    background-color: #fff3cd;
-    padding: 25px;
+    overflow: hidden;
+    padding: 30px;
+    background: var(--white);
 }
 
 .expenses-section table {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+    margin-top: 6px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    border-spacing: 0;
+    overflow: hidden;
 }
 
 .expenses-section th,
 .expenses-section td {
-    border: 1px solid #d4b85c;
-    padding: 12px;
+    padding: 15px 16px;
+    border-bottom: 1px solid var(--line);
     text-align: left;
 }
 
 .expenses-section thead th {
-    background-color: #f1c40f;
-    color: #2c3e50;
+    background: var(--sage);
+    color: var(--ink);
+    font-size: 0.8rem;
     font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
-.expenses-section td {
-    background-color: #fffdf5;
+.expenses-section tbody tr:nth-child(even) {
+    background: #f6f9f7;
 }
 
-tbody tr:nth-child(even) {
-    background-color: #f9f0c8;
+.expenses-section tbody tr:last-child td {
+    border-bottom: 0;
 }
 
-tbody tr:hover {
-    background-color: #eaf2ff;
+.expenses-section tbody tr:hover {
+    background: #fff3ed;
 }
 
 summary {
+    color: var(--coral-dark);
     cursor: pointer;
-    font-weight: 600;
-    color: #1f3b4d;
+    font-weight: 700;
+}
+
+.tips-section p {
+    margin-top: 12px;
+    color: var(--muted);
 }
 
 .video-section iframe {
     width: 100%;
-    max-width: 100%;
-    height: 315px;
+    min-height: 315px;
     border: 0;
-    border-radius: 8px;
+    border-radius: 12px;
+}
+
+@media (max-width: 680px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    .page-header,
+    .add-expense-section,
+    .expenses-section,
+    .tips-section,
+    .video-section {
+        margin-bottom: 18px;
+        border-radius: 14px;
+    }
+
+    .page-header,
+    .add-expense-section,
+    .expenses-section,
+    .tips-section,
+    .video-section {
+        padding: 22px 18px;
+    }
+
+    .heading-group {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .add-expense-section > form {
+        grid-template-columns: 1fr;
+    }
+
+    .expenses-section {
+        overflow-x: auto;
+    }
+
+    .expenses-section table {
+        min-width: 620px;
+    }
 }
