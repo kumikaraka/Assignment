@@ -1,14 +1,25 @@
 # Budget Tracker
 
-This project is a simple budget tracking webpage built as part of the Week 3 visual design challenge. It includes a form for adding expenses, a structured expense table, multimedia content, and a cohesive CSS visual identity.
+This project is a responsive budget tracking dashboard built with semantic HTML, CSS Grid, and Flexbox. It includes a form for adding expenses, a structured expense table, summary cards, navigation, multimedia content, and a cohesive CSS visual identity.
 
 ## Files in this project
 
 - `index.html` – Contains the page structure and all required HTML elements.
-- `style.css` – Adds the visual styling, typography, table formatting, form layout, responsive behavior, and advanced CSS selectors.
+- `style.css` – Adds the theme variables, Grid page layout, Flexbox navigation and card layouts, typography, table formatting, and responsive behavior.
 - `README.md` – Explains what the project contains and how each section works.
 
 ## What is included
+
+### Dashboard layout
+- The `.app-shell` uses CSS Grid to place the sidebar beside the main dashboard.
+- The dashboard uses Grid for the summary cards and lower content area.
+- Flexbox arranges the header, sidebar navigation, and content inside each dashboard card.
+- Below 768px, the layout collapses to one column and the navigation wraps for smaller screens.
+
+### Theme and interactions
+- `:root` custom properties define the brand, accent, surface, background, primary text, and secondary text colors.
+- A `prefers-color-scheme: dark` media query overrides only the theme variables for dark mode.
+- Dashboard cards animate with a 200ms transform and shadow on hover and keyboard focus.
 
 ### Expense table
 - The `expenses-section` contains a proper HTML table with `thead`, `tbody`, `tr`, `th`, and `td`.

@@ -7,16 +7,43 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="page-header">
-        <div class="heading-group">
-            <img src="https://via.placeholder.com/60x60/2c3e50/ffffff?text=Budget" alt="Budget tracker icon" width="60">
-            <h1 id="main-heading">My Budget Tracker</h1>
-        </div>
-        <p id="description">Track your income and expenses in one place.</p>
-    </header>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="brand-mark">
+                <span class="brand-icon">$</span>
+                <div>
+                    <strong>Ledger</strong>
+                    <span>Personal finance</span>
+                </div>
+            </div>
+            <nav aria-label="Main navigation">
+                <a class="nav-item active" href="#dashboard">Dashboard</a>
+                <a class="nav-item" href="#expenses">Expenses</a>
+                <a class="nav-item" href="#tips">Budget tips</a>
+            </nav>
+            <p class="sidebar-note">Small choices add up.</p>
+        </aside>
 
-    <section class="add-expense-section">
-        <h2>Add Expense</h2>
+        <main class="dashboard" id="dashboard">
+            <header class="page-header">
+                <div class="heading-group">
+                    <img src="https://via.placeholder.com/60x60/2c3e50/ffffff?text=Budget" alt="Budget tracker icon" width="60">
+                    <div>
+                        <p class="eyebrow">September 2026</p>
+                        <h1 id="main-heading">My Budget Tracker</h1>
+                    </div>
+                </div>
+                <p id="description">Track your income and expenses in one place.</p>
+            </header>
+
+            <section class="summary-grid" aria-label="Budget summary">
+                <article class="summary-card card" tabindex="0"><span class="card-label">Total spent</span><strong>$665.50</strong><span class="card-meta">Across 5 expenses</span></article>
+                <article class="summary-card card" tabindex="0"><span class="card-label">Monthly budget</span><strong>$1,200.00</strong><span class="card-meta">$534.50 remaining</span></article>
+                <article class="summary-card card" tabindex="0"><span class="card-label">Largest category</span><strong>Rent</strong><span class="card-meta">75% of total spending</span></article>
+            </section>
+
+    <section class="add-expense-section card" tabindex="0">
+        <div class="section-heading"><div><p class="eyebrow">Keep it current</p><h2>Add Expense</h2></div><span class="section-icon">+</span></div>
         <form id="expense-form">
             <div class="form-group">
                 <label for="expense-name">Expense Name:</label>
@@ -41,9 +68,9 @@
         </form>
     </section>
 
-    <section class="expenses-section">
-        <h2>Your Expenses</h2>
-        <table>
+    <section class="expenses-section card" id="expenses" tabindex="0">
+        <div class="section-heading"><div><p class="eyebrow">Recent activity</p><h2>Your Expenses</h2></div><span class="expense-count">5 entries</span></div>
+        <div class="table-wrap"><table>
             <thead>
                 <tr>
                     <th>Name</th>
@@ -84,20 +111,24 @@
                     <td>2026-09-09</td>
                 </tr>
             </tbody>
-        </table>
+        </table></div>
     </section>
 
-    <section class="tips-section">
-        <h2>How to Use This Tracker</h2>
+    <div class="lower-grid">
+    <section class="tips-section card" id="tips" tabindex="0">
+        <div class="section-heading"><div><p class="eyebrow">A useful habit</p><h2>How to Use This Tracker</h2></div></div>
         <details>
             <summary>Click to learn how the tracker works</summary>
             <p>Use the form to add your upcoming expenses, record the amount, and choose a category that matches the purchase. The table below keeps your spending organized so you can review patterns over time.</p>
         </details>
     </section>
 
-    <section class="video-section">
-        <h2>Budgeting Tip</h2>
+    <section class="video-section card" tabindex="0">
+        <div class="section-heading"><div><p class="eyebrow">One minute reset</p><h2>Budgeting Tip</h2></div></div>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Budgeting tips video" frameborder="0" allowfullscreen></iframe>
     </section>
+    </div>
+    </main>
+    </div>
 </body>
 </html>
